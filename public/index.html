@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+<title>Chat APP</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  
+  <div class="app">
+    <div class="screen join-screen active">
+      <div class="form">
+        <h2>Chat</h2>
+        <div class="form-input">
+          <label>Who the fuck are you?</label>
+          <input type="text" id="username">
+        </div>
+        <div class="form-input">
+          <button class="btn" id="join-user" onclick="showAndroidToast('Hello Android!')">V s t u p</button>
+        </div>
+      </div>
+    </div>
+    <div class="screen chat-screen">
+    <div class="header">   
+      <div class="logo"></div>
+     <div class="anochat"><p class="ach">Chat</p></div> 
+      <button class="extbtn" id="exit-chat">E x i t</button>
+    </div>
+    <div class="messages">
+    </div>
+    <div class="typebox">
+      <input type="text" id="message-input">
+      <button id="send-message">Poslat</button>
+    </div>
+  </div>
+</div>
+<script>
+    function showAndroidToast(toast) {
+      Android.showToast(toast);
+    }
+  document.addEventListener('keydown', (event) => {
+    if (event.key == 'Enter') {
+  document.getElementById("send-message").click();
+    }
+});
+</script>  
+<script src="/socket.io/socket.io.js"></script>
+<script src="/client.js"></script>
+</body>
+
+</html>
